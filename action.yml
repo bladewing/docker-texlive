@@ -1,0 +1,13 @@
+# action.yml
+name: 'Build LaTeX document'
+description: 'Greet someone and record the time'
+inputs:
+  build-pattern:  # id of input
+    description: 'Pattern to build LaTeX files'
+    required: true
+    default: '*.tex'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.build-pattern }}
